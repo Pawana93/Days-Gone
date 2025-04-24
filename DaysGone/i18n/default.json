@@ -1,0 +1,7 @@
+{
+  "dayCounter.text": "Day {0}",
+  "config.xPosition.name": "X Position",
+  "config.yPosition.name": "Y Position",
+  "config.textColor.name": "Text Color",
+  "config.showSeasonYear.name": "Show Season/Year"
+}

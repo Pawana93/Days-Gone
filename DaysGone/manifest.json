@@ -1,0 +1,10 @@
+{
+  "Name": "Days Gone",
+  "Author": "Pawana McKay",
+  "Version": "0.0.1",
+  "Description": "Shows the total days passed since the game started",
+  "UniqueID": "Pawana.DaysGone",
+  "EntryDll": "DaysGone.dll",
+  "MinimumApiVersion": "3.15.0",
+  "UpdateKeys": [ "GitHub:Pawana93/Days-Gone" ]
+}
