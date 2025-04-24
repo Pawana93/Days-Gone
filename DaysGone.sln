@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaysGone", "DaysGone\DaysGone.csproj", "{367A54BA-0B35-4044-AF5B-52BB426FC933}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Projektmappenelemente", "{84D27F74-D2BA-6C25-2661-968F101900D9}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{367A54BA-0B35-4044-AF5B-52BB426FC933}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{367A54BA-0B35-4044-AF5B-52BB426FC933}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{367A54BA-0B35-4044-AF5B-52BB426FC933}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{367A54BA-0B35-4044-AF5B-52BB426FC933}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78D6669F-8E7F-4C57-B300-FB0E683A6CE9}
+	EndGlobalSection
+EndGlobal
