@@ -43,9 +43,7 @@ public class DaysGone : Mod
     {
         if (!Context.IsWorldReady) return;
 
-        string text = this.Helper.Translation.Get("dayCounter.text")
-            .Tokens(new { days = totalDays })
-            .ToString();
+        string text = $"{this.Helper.Translation.Get("dayCounter.text")} {totalDays}";
 
         if(config.ShowSeasonYear) text += $"\n{Game1.currentSeason} Y{Game1.year}";
 
