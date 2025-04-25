@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks.Sources;
 using Days_Gone.Interfaces;
+using Days_Gone.Services;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using StardewModdingAPI;
@@ -14,6 +15,7 @@ public class DaysGone : Mod
 {
     private int totalDays;
     private DaysGoneConfig config;
+    private readonly DaysCalculationService _calculationService = new();
 
     public override void Entry(IModHelper helper)
     {
@@ -31,12 +33,12 @@ public class DaysGone : Mod
     private void OnSaveLoaded(object sender, SaveLoadedEventArgs e)
     {
         // Calculate current day count
-        totalDays = (Game1.year - 1) * 112 + (Utility.getSeasonNumber(Game1.currentSeason) * 28) + Game1.dayOfMonth;
+        totalDays = _calculationService.CalculateTotalDays();
     }
 
     private void OnDayStarted(object sender, DayStartedEventArgs e)
     {
-        totalDays++;
+        totalDays = _calculationService.CalculateTotalDays();
     }
 
     private void OnRenderingHud(object sender, RenderingHudEventArgs e)
