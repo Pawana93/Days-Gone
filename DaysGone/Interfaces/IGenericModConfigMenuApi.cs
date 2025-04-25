@@ -1,11 +1,10 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using StardewModdingAPI;
-using StardewModdingAPI.Utilities;
-using StardewValley;
+﻿using StardewModdingAPI;
 
 namespace Days_Gone.Interfaces;
 
+/**
+ * <summary>A local copy of the Interface used by <see cref="https://github.com/spacechase0/StardewValleyMods/tree/develop/GenericModConfigMenu#for-c-mod-authors"/></summary>
+ **/
 public interface IGenericModConfigMenuApi
 {
     /*********

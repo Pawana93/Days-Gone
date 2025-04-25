@@ -7,5 +7,11 @@
   "config.textColor.name": "Textfarbe",
   "config.textColor.tooltip": "Die Farbe des Textes",
   "config.showSeasonYear.name": "Saison/Jahr anzeigen",
-  "config.showSeasonYear.tooltip": "Zeige aktuelle Saison und das Jahr"
+  "config.showSeasonYear.tooltip": "Zeige aktuelle Saison und das Jahr",
+  "white": "Weiß",
+  "red": "Rot",
+  "blue": "Blau",
+  "green": "Grün",
+  "black": "Schwarz",
+  "yellow": "Gelb"
 }

@@ -8,5 +8,10 @@
   "config.textColor.tooltip": "The color of the text",
   "config.showSeasonYear.name": "Show Season/Year",
   "config.showSeasonYear.tooltip": "Show the current season and year",
-  "white": "White"
+  "white": "White",
+  "red": "Red",
+  "blue": "Blue",
+  "green": "Green",
+  "black": "Black",
+  "yellow": "Yellow"
 }
