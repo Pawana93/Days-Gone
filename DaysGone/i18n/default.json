@@ -1,0 +1,17 @@
+{
+  "dayCounter.text": "Day",
+  "config.xPosition.name": "X Position",
+  "config.xPosition.tooltip": "The horizontal position of the Widget",
+  "config.yPosition.name": "Y Position",
+  "config.yPosition.tooltip": "The vertical position of the Widget",
+  "config.textColor.name": "Text Color",
+  "config.textColor.tooltip": "The color of the text",
+  "config.showSeasonYear.name": "Show Season/Year",
+  "config.showSeasonYear.tooltip": "Show the current season and year",
+  "white": "White",
+  "red": "Red",
+  "blue": "Blue",
+  "green": "Green",
+  "black": "Black",
+  "yellow": "Yellow"
+}
