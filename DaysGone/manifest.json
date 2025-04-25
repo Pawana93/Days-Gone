@@ -1,7 +1,7 @@
 {
   "Name": "Days Gone",
   "Author": "Pawana McKay",
-  "Version": "0.0.1",
+  "Version": "%ProjectVersion%",
   "Description": "Shows the total days passed since the game started",
   "UniqueID": "Pawana.DaysGone",
   "EntryDll": "DaysGone.dll",

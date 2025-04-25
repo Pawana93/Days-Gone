@@ -16,4 +16,4 @@ Days Gone is a little convenience Mod, that allows to show how many days have pa
 
 ## Configuration
 
-Edit either the `config.json` in the mod folder or use the Generic Mod Config menu in-game
+Edit either the `config.json` in the mod folder or use the Generic Mod Config menu in-game (if you have the Mod installed)
