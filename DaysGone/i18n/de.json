@@ -1,0 +1,17 @@
+{
+  "dayCounter.text": "Tag",
+  "config.xPosition.name": "X-Position",
+  "config.xPosition.tooltip": "Die horizontale Position des Textes",
+  "config.yPosition.name": "Y-Position",
+  "config.yPosition.tooltip": "Die vertikale Position des Textes",
+  "config.textColor.name": "Textfarbe",
+  "config.textColor.tooltip": "Die Farbe des Textes",
+  "config.showSeasonYear.name": "Saison/Jahr anzeigen",
+  "config.showSeasonYear.tooltip": "Zeige aktuelle Saison und das Jahr",
+  "white": "Weiß",
+  "red": "Rot",
+  "blue": "Blau",
+  "green": "Grün",
+  "black": "Schwarz",
+  "yellow": "Gelb"
+}
