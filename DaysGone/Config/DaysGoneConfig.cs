@@ -1,6 +1,6 @@
 ﻿using StardewModdingAPI;
 
-namespace Days_Gone;
+namespace Days_Gone.Config;
 
 public class DaysGoneConfig
 {

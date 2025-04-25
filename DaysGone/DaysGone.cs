@@ -1,10 +1,8 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.Threading.Tasks.Sources;
+﻿using Days_Gone.Config;
 using Days_Gone.Interfaces;
 using Days_Gone.Services;
+using Microsoft.VisualBasic;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewValley;
@@ -57,7 +55,61 @@ public class DaysGone : Mod
 
     private void OnGameLaunched(object sender, GameLaunchedEventArgs e)
     {
-        TryRegisterConfigMenu();
+        if (!this.Helper.ModRegistry.IsLoaded("spacechase0.GenericModConfigMenu")) return;
+
+        try
+        {
+            var configMenu = this.Helper.ModRegistry.GetApi<IGenericModConfigMenuApi>("spacechase0.GenericModConfigMenu");
+            if (configMenu == null) return;
+
+            configMenu.Register(
+                mod: this.ModManifest,
+                reset: () => this.config = new DaysGoneConfig(),
+                save: () => this.Helper.WriteConfig(this.config),
+                titleScreenOnly: false
+            );
+
+            configMenu.AddNumberOption(
+                mod: this.ModManifest,
+                name: () => this.Helper.Translation.Get("config.xPosition.name"),
+                tooltip: () => this.Helper.Translation.Get("config.xPosition.tooltip"),
+                getValue: () => this.config.PositionX,
+                setValue: value => this.config.PositionX = value,
+                min: 0,
+                max: Game1.viewport.Width
+            );
+
+            configMenu.AddNumberOption(
+                mod: this.ModManifest,
+                name: () => this.Helper.Translation.Get("config.yPosition.name"),
+                tooltip: () => this.Helper.Translation.Get("config.yPosition.tooltip"),
+                getValue: () => this.config.PositionY,
+                setValue: value => this.config.PositionY = value,
+                min: 0,
+                max: Game1.viewport.Height
+            );
+
+            configMenu.AddTextOption(
+                mod: this.ModManifest,
+                name: () => this.Helper.Translation.Get("config.textColor.name"),
+                tooltip: () => this.Helper.Translation.Get("config.textColor.tooltip"),
+                getValue: () => this.config.TextColor,
+                setValue: value => this.config.TextColor = value,
+                allowedValues: new[] { "White", "Red", "Blue", "Green", "Black", "Yellow" }
+            );
+
+            configMenu.AddBoolOption(
+                mod: this.ModManifest,
+                name: () => this.Helper.Translation.Get("config.showSeasonYear.name"),
+                tooltip: () => this.Helper.Translation.Get("config.showSeasonYear.tooltip"),
+                getValue: () => this.config.ShowSeasonYear,
+                setValue: value => this.config.ShowSeasonYear = value
+            );
+        }
+        catch(Exception ex)
+        {
+            this.Monitor.Log($"GMCM integration failed: {ex}", LogLevel.Warn);
+        }
     }
 
     private Color GetColorFromString(string colorName)
@@ -74,7 +126,7 @@ public class DaysGone : Mod
         };
     }
 
-    private void TryRegisterConfigMenu()
+    /*private void TryRegisterConfigMenu()
     {
         // Check if GMCM is installed and available
         if (this.Helper.ModRegistry.IsLoaded("spacechase0.GenericModConfigMenu")) return;
@@ -128,5 +180,5 @@ public class DaysGone : Mod
         {
             this.Monitor.Log($"Failed loading GMCM: {ex.Message}", LogLevel.Warn);
         }
-    }
+    }*/
 }

@@ -6,5 +6,11 @@
   "UniqueID": "Pawana.DaysGone",
   "EntryDll": "DaysGone.dll",
   "MinimumApiVersion": "3.15.0",
-  "UpdateKeys": [ "GitHub:Pawana93/Days-Gone" ]
+  "UpdateKeys": [ "GitHub:Pawana93/Days-Gone" ],
+  "Dependencies": [
+    {
+      "UniqueID": "spacechase0.GenericModConfigMenu",
+      "IsRequired": false
+    }
+  ]
 }
