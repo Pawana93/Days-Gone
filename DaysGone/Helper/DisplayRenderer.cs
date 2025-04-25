@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using StardewModdingAPI;
 using StardewValley;
+using System.Runtime.CompilerServices;
 
 namespace Days_Gone.Helper;
 
@@ -13,8 +14,8 @@ public static class DisplayRenderer
 
     public static void LoadTextures(IModHelper helper)
     {
-        _scrollTexture = helper.GameContent.Load<Texture2D>("assets/scroll.png");
-        _textBoxTexture = helper.GameContent.Load<Texture2D>("assets/textbox.png");
+        _scrollTexture = helper.GameContent.Load<Texture2D>(Path.Combine(helper.DirectoryPath, "assets", "scroll.png"));
+        _textBoxTexture = helper.GameContent.Load<Texture2D>(Path.Combine(helper.DirectoryPath, "assets", "textbox.png"));
     }
 
     public static void DrawDisplay(DaysGoneConfig config, string text, SpriteBatch spriteBatch)

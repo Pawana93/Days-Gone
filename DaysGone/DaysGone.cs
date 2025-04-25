@@ -2,6 +2,7 @@
 using Days_Gone.Helper;
 using Days_Gone.Interfaces;
 using Days_Gone.Services;
+using Days_Gone.Shared;
 using Microsoft.Xna.Framework;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
@@ -28,6 +29,7 @@ public class DaysGone : Mod
     {
         // Load the config
         this.config = this.Helper.ReadConfig<DaysGoneConfig>();
+        DisplayRenderer.LoadTextures(helper);
 
         helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
         helper.Events.GameLoop.DayStarted += OnDayStarted;
@@ -61,14 +63,10 @@ public class DaysGone : Mod
         string text = $"{this.Helper.Translation.Get("dayCounter.text")} {totalDays}";
 
         // Show additional Text, if the option is set
-        if(config.ShowSeasonYear) text += $"\n{Game1.currentSeason} Y{Game1.year}";
+        if(config.ShowSeasonYear) text += $"\n{Game1.currentSeason.FirstToUpper()} Y{Game1.year}";
 
-        // Position the Text and Color
-        Vector2 position = new(config.PositionX, config.PositionY);
-        Color color = GetColorFromString(config.TextColor);
-
-        // Draw the Text in the UI
-        Game1.spriteBatch.DrawString(Game1.smallFont, text, position, color);
+        // Draw the Text on the Screen according to the Config
+        DisplayRenderer.DrawDisplay(config, text, Game1.spriteBatch);
     }
 
     /// <summary>The Code that will be run, when the game is launched</summary>
@@ -92,6 +90,7 @@ public class DaysGone : Mod
             );
 
             // Add the Options to the Config Menu
+            // X Position
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
                 name: () => this.Helper.Translation.Get("config.xPosition.name"),
@@ -102,6 +101,7 @@ public class DaysGone : Mod
                 max: Game1.viewport.Width
             );
 
+            // Y Position
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
                 name: () => this.Helper.Translation.Get("config.yPosition.name"),
@@ -112,6 +112,7 @@ public class DaysGone : Mod
                 max: Game1.viewport.Height
             );
 
+            // Text Color
             configMenu.AddTextOption(
                 mod: this.ModManifest,
                 name: () => this.Helper.Translation.Get("config.textColor.name"),
@@ -122,6 +123,7 @@ public class DaysGone : Mod
                 formatAllowedValue: colorKey => this.Helper.Translation.Get(colorKey.ToLower())
             );
 
+            // Show Seasons and Year
             configMenu.AddBoolOption(
                 mod: this.ModManifest,
                 name: () => this.Helper.Translation.Get("config.showSeasonYear.name"),

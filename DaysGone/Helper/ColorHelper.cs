@@ -30,6 +30,6 @@ public static class ColorHelper
             "white" => Color.White,
             "yellow" => Color.Yellow,
             _ => Color.White
-        }
+        };
     }
 }

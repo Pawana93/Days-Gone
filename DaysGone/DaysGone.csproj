@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>DaysGone</AssemblyName>
-    <Version>0.0.1</Version>
+    <Version>0.1.0</Version>
     <RootNamespace>Days_Gone</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
