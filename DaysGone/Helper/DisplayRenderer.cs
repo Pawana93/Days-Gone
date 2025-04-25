@@ -14,8 +14,8 @@ public static class DisplayRenderer
 
     public static void LoadTextures(IModHelper helper)
     {
-        _scrollTexture = helper.GameContent.Load<Texture2D>(Path.Combine(helper.DirectoryPath, "assets", "scroll.png"));
-        _textBoxTexture = helper.GameContent.Load<Texture2D>(Path.Combine(helper.DirectoryPath, "assets", "textbox.png"));
+        //_scrollTexture = helper.GameContent.Load<Texture2D>(Path.Combine(helper.DirectoryPath, "assets", "scroll.png"));
+        _textBoxTexture = helper.GameContent.Load<Texture2D>(@"LooseSprites\\textBox");
     }
 
     public static void DrawDisplay(DaysGoneConfig config, string text, SpriteBatch spriteBatch)

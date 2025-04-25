@@ -131,6 +131,27 @@ public class DaysGone : Mod
                 getValue: () => this.config.ShowSeasonYear,
                 setValue: value => this.config.ShowSeasonYear = value
             );
+
+            configMenu.AddTextOption(
+                mod: this.ModManifest,
+                name: () => this.Helper.Translation.Get("config.dispalyStyle.name"),
+                tooltip: () => this.Helper.Translation.Get("config.dispalyStyle.tooltip"),
+                getValue: () => config.DisplayStyle.ToString(),
+                setValue: value => config.DisplayStyle = (DisplayStyle)Enum.Parse(typeof(DisplayStyle), value),
+                allowedValues: Enum.GetNames(typeof(DisplayStyle)),
+                formatAllowedValue: value => this.Helper.Translation.Get($"displayStyle.{value.ToLower()}")
+            );
+
+            configMenu.AddNumberOption(
+                mod: this.ModManifest,
+                name: () => this.Helper.Translation.Get("config.backgroundOpacity.name"),
+                tooltip: () => this.Helper.Translation.Get("config.backgroundOpacity.tooltip"),
+                getValue: () => (int)(this.config.BackgroundOpacity * 100),
+                setValue: value => this.config.BackgroundOpacity = value / 100f,
+                min: 10,
+                max: 100,
+                interval: 5
+            );
         }
         catch(Exception ex)
         {
